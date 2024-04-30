@@ -1,0 +1,78 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\educool\\RiderProjects\\TelephoneCompanyApp\\TelephoneCompanyApp\\TelephoneCompanyApp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\educool\\RiderProjects\\TelephoneCompanyApp\\TelephoneCompanyApp\\TelephoneCompanyApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\educool\\RiderProjects\\TelephoneCompanyApp\\TelephoneCompanyApp\\TelephoneCompanyApp.csproj",
+        "projectName": "TelephoneCompanyApp",
+        "projectPath": "C:\\Users\\educool\\RiderProjects\\TelephoneCompanyApp\\TelephoneCompanyApp\\TelephoneCompanyApp.csproj",
+        "packagesPath": "C:\\Users\\educool\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\educool\\RiderProjects\\TelephoneCompanyApp\\TelephoneCompanyApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\educool\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Dapper.Contrib": {
+              "target": "Package",
+              "version": "[2.0.78, )"
+            },
+            "MvvmLight": {
+              "target": "Package",
+              "version": "[5.4.1.1, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Users\\educool\\.dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

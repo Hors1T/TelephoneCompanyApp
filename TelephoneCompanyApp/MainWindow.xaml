@@ -1,0 +1,58 @@
+﻿<Window x:Class="TelephoneCompanyApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TelephoneCompanyApp"
+        xmlns:viewModels="clr-namespace:TelephoneCompanyApp.ViewModels"
+        mc:Ignorable="d"
+        Title="Абоненты" Height="450" Width="865">
+    <Window.DataContext>
+        <viewModels:MainViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <CollectionViewSource x:Key="AbonentsCollectionViewSource" Source="{Binding Abonents}" />
+    </Window.Resources>
+    <Grid>
+        <DataGrid x:Name="AbonentsDataGrid" ItemsSource="{Binding Source={StaticResource AbonentsCollectionViewSource}}" AutoGenerateColumns="False" Margin="10,40,10,0"
+                  Sorting="DataGrid_Sorting" Height="300" VerticalAlignment="Top">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ФИО абонента" Binding="{Binding FullName}" />
+                <DataGridTextColumn Header="Улица" Binding="{Binding Street}" />
+                <DataGridTextColumn Header="Номер дома" Binding="{Binding HouseNumber}" />
+                <DataGridTextColumn Header="Номер телефона (домашний)" Binding="{Binding HomePhoneNumber}" />
+                <DataGridTextColumn Header="Номер телефона (рабочий)" Binding="{Binding WorkPhoneNumber}" />
+                <DataGridTextColumn Header="Номер телефона (мобильный)" Binding="{Binding MobilePhoneNumber}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" Margin="5, 0, 0, 15" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Vertical">
+                <Label Content="ФИО абонента:" Width="120"/>
+                <TextBox Text="{Binding FilterTextFullName, UpdateSourceTrigger=PropertyChanged}" Width="120" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <Label Content="Улица:" Width="120"/>
+                <TextBox Text="{Binding FilterTextStreet, UpdateSourceTrigger=PropertyChanged}" Width="120" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <Label Content="Номер дома:" Width="120"/>
+                <TextBox Text="{Binding FilterTextHouseNumber, UpdateSourceTrigger=PropertyChanged}" Width="120" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <Label Content="Домашний:" Width="120"/>
+                <TextBox Text="{Binding FilterTextHomePhoneNumber, UpdateSourceTrigger=PropertyChanged}" Width="120" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <Label Content="Рабочий:" Width="120"/>
+                <TextBox Text="{Binding FilterTextWorkPhoneNumber, UpdateSourceTrigger=PropertyChanged}" Width="120" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <Label Content="Мобильный:" Width="120"/>
+                <TextBox Text="{Binding FilterTextMobilePhoneNumber, UpdateSourceTrigger=PropertyChanged}" Width="120" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+        <Button Content="Поиск" Command="{Binding OpenSearchCommand}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Button Content="Улицы" Command="{Binding OpenStreetsCommand}" HorizontalAlignment="Left" Margin="60,10,0,0" VerticalAlignment="Top"/>
+        <Button Content="Выгрузить CSV" Command="{Binding ExportToCSVCommand}" HorizontalAlignment="Right" Margin="90,10,10,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
